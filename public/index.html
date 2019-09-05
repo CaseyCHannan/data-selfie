@@ -7,7 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Data Self</h1>
+    <script>
+        if ("geolocation" in navigator) {
+        console.log( "geolocation is available")
+        navigator.geolocation.getCurrentPosition(position => {
+            console.log(position)
+            const lat = position.coords.latitude
+            document.getElementById('latitude').textContent = lat
+            const lon = position.coords.longitude
+            document.getElementById('longitude').textContent = lon
+        })
+        } else {
+            console.log("geolocation IS NOT available")
+        }   
+    </script>
+    <h1>Data Selfie</h1>
     <p>YO!!</p>
+    <p>
+        Latitude: <span id="latitude"></span><br />
+        Longitude: <span id="longitude"></span><br /> 
+    </p>
 </body>
 </html>
