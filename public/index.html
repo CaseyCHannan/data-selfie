@@ -22,11 +22,13 @@
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
+                
             },
-            bosdy: JSON.stringify(data)
-
+            body: JSON.stringify(data)
         }
-        fetch('api', options)
+        fetch('/api', options).then(response => {
+            console.log(response)
+        })
     })
         } else {
             console.log("geolocation IS NOT available")
